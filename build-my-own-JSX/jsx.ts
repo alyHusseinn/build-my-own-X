@@ -1,14 +1,15 @@
+/** @jsx h */
 // Babel includes support for transpiling JSX ==right out of the box==. 
 // You declare this per-file or per-function to tell your transpiler (eg: Babel) 
 // the name of a function that should be called at runtime for each node
 
 // in the example below, we are saying "inject calls to an h() function for each node":
-/** @jsx h */
 
 // let foo = <div id="foo">Hello!</div>;
 // After: (the code you run)
 
 // var foo = h('div', {id:"foo"}, 'Hello!');
+
 type Vnode = {
     nodeName: string | null;
     attributes: object | null;
@@ -45,11 +46,5 @@ function render(vNode: Vnode): HTMLElement | Text {
 
     return node;
 }
-// JSX -> VDOM:
-// let vdom = <div id="foo">Hello!</div>;
 
-// VDOM -> DOM:
-// let dom = render(vdom);
-
-// add the tree to <body>:
-// document.body.appendChild(dom);
+export {render, h};
